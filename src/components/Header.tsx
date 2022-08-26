@@ -3,8 +3,9 @@ import logo from '../img/paw-solid.svg'
 import user from '../img/user-alt-solid.svg'
 import cart from '../img/shopping-cart-solid.svg'
 import logout from '../img/logout.svg'
+import { header } from '../types/header'
 
-export default function Header(props) {
+export default function Header(props: header) {
   return (
     <header>
       <nav className='container'>
@@ -41,7 +42,7 @@ export default function Header(props) {
           )}
           <div>
             <a href='/carrinho'>
-              {props.itens > 0 && <h4>{props.itens}</h4>}
+              {props.itens && <h4>{props.itens}</h4>}
               <img
                 src={cart}
                 alt=' Carrinho de Compras'

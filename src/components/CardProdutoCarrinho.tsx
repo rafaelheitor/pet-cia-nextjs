@@ -1,6 +1,6 @@
-import React from 'react'
+import { Produto } from '../types/produto'
 
-export default function CardProdutoCarrinho(props) {
+const CardProdutoCarrinho: React.FC<Produto> = (props) => {
   return (
     <div>
       <img
@@ -16,12 +16,12 @@ export default function CardProdutoCarrinho(props) {
           <label>Mais informações</label>
         </button>
       </a>
-      <button
+      {/* <button
         className='btn-carrinho-remover'
         onClick={() => props.handleClick(props.id)}
       >
         <label>Remover do carrinho</label>
-      </button>
+      </button> */}
     </div>
   )
 }
