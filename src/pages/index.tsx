@@ -1,8 +1,8 @@
 import { NextPage } from 'next'
-import CardProduto from '../src/components/CardProduto'
-import Header from '../src/components/Header'
-import Footer from '../src/components/Footer'
-import { getProdutos } from '../src/services/produtos'
+import CardProduto from '../components/CardProduto'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import { getProdutos } from '../services/produtos'
 
 type props = {
   data: {
@@ -41,7 +41,7 @@ const Page: NextPage<props> = ({ data }) => {
   return (
     <>
       <Header />
-      <div className='catalogo'>{names}</div>
+      <div className="catalogo">{names}</div>
       <Footer />
     </>
   )
