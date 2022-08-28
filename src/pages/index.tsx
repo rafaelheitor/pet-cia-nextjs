@@ -3,17 +3,10 @@ import CardProduto from '../components/CardProduto'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { getProdutos } from '../services/produtos'
+import { Produto } from '../types/produto'
 
 type props = {
-  data: {
-    id: number
-    nome: string
-    descricao: string
-    valor: number
-    categoria: string
-    estoque: number
-    imagem_produto: string
-  }[]
+  data: Produto[]
 }
 
 export async function getServerSideProps() {
@@ -35,7 +28,7 @@ const Page: NextPage<props> = ({ data }) => {
       categoria={produto.categoria}
       estoque={produto.estoque}
       nome={produto.nome}
-      imagem={produto.imagem_produto}
+      imagem_produto={produto.imagem_produto}
     />
   ))
   return (
