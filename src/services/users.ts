@@ -9,16 +9,16 @@ const apiEndpoint = 'http://localhost:4000'
 export async function login(data: user['login']) {
   const { data: resposta } = await httpService.post(
     `${apiEndpoint}${usuariosEndpoint}/login`,
-    data
+    data,
   )
   const { token } = resposta
   localStorage.setItem('token', JSON.stringify(token))
 }
 
-export async function registro(data) {
+export async function registro(data: user['registro']) {
   const { data: resposta } = await httpService.post(
     `${apiEndpoint}${usuariosEndpoint}/registro`,
-    data
+    data,
   )
   const { token } = resposta
   localStorage.setItem('token', JSON.stringify(token))
@@ -35,7 +35,7 @@ export async function logout() {
       null,
       {
         withCredentials: true,
-      }
+      },
     )
     localStorage.removeItem('token')
   } catch (error) {}

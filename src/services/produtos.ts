@@ -1,20 +1,12 @@
+import { SetStateAction } from 'react'
 import httpService from './httpService'
 // import { apiEndpoint } from '../config.json'
-
-interface produto {
-  id: number
-  nome: string
-  descricao: string
-  valor: number
-  categoria: string
-  estoque: number
-  imagem_produto: string
-}
+import { Produto } from '../types/produto'
 
 const produtosEndpoint = '/produtos'
 const apiEndpoint = 'http://localhost:4000'
 
-export async function getProdutos(): Promise<produto[] | undefined> {
+export async function getProdutos() {
   try {
     const { data } = await httpService.get(apiEndpoint + produtosEndpoint)
     const { listaDeProdutos } = data
@@ -22,16 +14,16 @@ export async function getProdutos(): Promise<produto[] | undefined> {
   } catch (error) {}
 }
 
-export function createProduto(data: produto) {
+export function createProduto(data: Produto) {
   return httpService.post(apiEndpoint + produtosEndpoint + '/novo', data)
 }
 export function deleteProduto(id: number) {
   return httpService.delete(apiEndpoint + produtosEndpoint + `/deletar/${id}`)
 }
-export async function infoProduto(id: number): Promise<produto | undefined> {
+export async function infoProduto(id: number): Promise<Produto | undefined> {
   try {
     const { data } = await httpService.get(
-      apiEndpoint + produtosEndpoint + `/detalhe/${id}`
+      apiEndpoint + produtosEndpoint + `/detalhe/${id}`,
     )
     const { produto } = data
     return produto
