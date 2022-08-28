@@ -5,5 +5,5 @@ export type Produto = {
   valor: number
   categoria: string
   estoque: number
-  imagem: string
+  imagem_produto: string
 }
