@@ -1,11 +1,10 @@
-import React from "react"
-import instagramIcon from '../img/instagram-brands (1).svg'
-import facebookIcon from '../img/facebook-brands.svg'
-import twitterIcon from '../img/twitter-brands.svg'
-import dogIcon from '../img/dog-solid.svg'
-import catIcon from '../img/cat-solid.svg'
-import fishIcon from '../img/fish-solid.svg'
-
+import React from 'react'
+import instagramIcon from '../assets/img/instagram-brands (1).svg'
+import facebookIcon from '../assets/img/facebook-brands.svg'
+import twitterIcon from '../assets/img/twitter-brands.svg'
+import dogIcon from '../assets/img/dog-solid.svg'
+import catIcon from '../assets/img/cat-solid.svg'
+import fishIcon from '../assets/img/fish-solid.svg'
 
 export default function Footer() {
   return (
