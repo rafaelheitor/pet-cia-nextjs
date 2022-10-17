@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { getProdutos } from '../services/produtos'
 import { Produto } from '../types/produto'
+import styles from '../styles/components/index.module.scss'
 
 type props = {
   data: Produto[]
@@ -34,7 +35,9 @@ const Page: NextPage<props> = ({ data }) => {
   return (
     <>
       <Header />
-      <div className="catalogo">{names}</div>
+      <div className={styles.main}>
+        <div className={styles.catalogo}>{names}</div>
+      </div>
       <Footer />
     </>
   )
