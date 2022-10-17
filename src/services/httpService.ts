@@ -3,7 +3,7 @@ import axios from 'axios'
 // import { toast } from 'react-toastify'
 
 // axios.defaults.headers.common['x-auth-token'] = `Bearer ${getToken()}`
-axios.interceptors.response.use(undefined, (error) => {
+axios.interceptors.response.use(undefined, (error: any) => {
   const errosEsperados =
     error.response && error.response.status >= 400 && error.status < 500
 

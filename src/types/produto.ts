@@ -6,4 +6,5 @@ export type Produto = {
   categoria: string
   estoque: number
   imagem_produto: string
+  key?: number
 }

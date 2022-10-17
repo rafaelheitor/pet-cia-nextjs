@@ -8,13 +8,19 @@ export default function Header(props: header) {
       <nav className={styles.container}>
         <section className={styles.pHeader}>
           <a href='/'>
-            <div className='logo'>
-              <img src='/img/paw-solid.svg' alt='' />
+            <div className={styles.logo}>
+              <img
+                src='/img/paw-solid.svg'
+                alt=''
+              />
               <p>Pet & Cia</p>
             </div>
           </a>
 
-          <input type='text' placeholder='Pesquise seu Produto' />
+          <input
+            type='text'
+            placeholder='Pesquise seu Produto'
+          />
 
           {props.usuario ? (
             <div>
@@ -24,7 +30,10 @@ export default function Header(props: header) {
             </div>
           ) : (
             <button className={styles.logo}>
-              <img src='/img/user-alt-solid.svg' alt='' />
+              <img
+                src='/img/user-alt-solid.svg'
+                alt=''
+              />
               <a href='/login'>Entre ou Registre-se</a>
             </button>
           )}
