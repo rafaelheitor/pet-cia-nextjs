@@ -10,7 +10,11 @@ type props = {
   data: Produto[]
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({req, res}) {
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=60, stale-while-revalidate=119'
+  )
   const listaDeProdutos = await getProdutos()
   return {
     props: {
